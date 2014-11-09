@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AA6FE0B2-8218-4CFE-A520-ECC2F7B6266E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DF.Core", "src\DF.Core\DF.Core.csproj", "{52030E4F-C189-40AF-9C94-7E00A5D46032}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52030E4F-C189-40AF-9C94-7E00A5D46032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52030E4F-C189-40AF-9C94-7E00A5D46032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52030E4F-C189-40AF-9C94-7E00A5D46032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52030E4F-C189-40AF-9C94-7E00A5D46032}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52030E4F-C189-40AF-9C94-7E00A5D46032} = {AA6FE0B2-8218-4CFE-A520-ECC2F7B6266E}
+	EndGlobalSection
+EndGlobal
