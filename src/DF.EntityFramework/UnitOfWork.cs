@@ -22,6 +22,11 @@ namespace DF.EntityFramework
             return new Repository<TAggregate, TKey>(this._context);
         }
 
+        public IRepository<TAggregate> Repository<TAggregate>() where TAggregate : class, IAggregate, new()
+        {
+            return new Repository<TAggregate>(this._context);
+        }
+
         public void Commit()
         {
             this._context.SaveChanges();

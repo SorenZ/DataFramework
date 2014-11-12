@@ -10,7 +10,22 @@ namespace DF.Contracts
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<TAggregate, TKey> Repository<TAggregate, TKey>() where TAggregate : class, IAggregate<TKey>, new();
+        /// <summary>
+        /// provide basic repository for specific Aggregate and Key
+        /// </summary>
+        /// <typeparam name="TAggregate"></typeparam>
+        /// <typeparam name="TKey"></typeparam>
+        /// <returns></returns>
+        IRepository<TAggregate, TKey> Repository<TAggregate, TKey>()
+            where TAggregate : class, IAggregate<TKey>, new();
+
+        /// <summary>
+        /// provide basic repository for specific Aggregate
+        /// </summary>
+        /// <typeparam name="TAggregate"></typeparam>
+        /// <returns></returns>
+        IRepository<TAggregate> Repository<TAggregate>()
+            where TAggregate : class, IAggregate, new();
 
         /// <summary>
         /// Commits the works.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Represent a collection of objects that are bound together by a root entity
     /// </summary>
-    public interface IAggregate
+    public interface IAggregate : IEntity
     { }
 
     /// <summary>
