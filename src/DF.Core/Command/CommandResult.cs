@@ -104,9 +104,9 @@ namespace DF.Core.Command
     public enum ResultStatus
     {
         /// <summary>
-        /// the command executed successfully 
+        /// the service got the message and execute it.
         /// </summary>
-        Successful = 1,
+        Okay = 1,
 
         /// <summary>
         /// the command executed and there is some information about it.
@@ -119,8 +119,13 @@ namespace DF.Core.Command
         Warning = 3,
 
         /// <summary>
-        /// the commad execution has been  failed with error. 
+        /// the commad execution has been failed with error. 
         /// </summary>
-        Error = 4
+        Error = 4,
+
+        /// <summary>
+        /// the command executed successfully 
+        /// </summary>
+        Successful = 5,
     }
 }

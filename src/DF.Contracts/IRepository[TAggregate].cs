@@ -54,11 +54,5 @@ namespace DF.Contracts
         /// </summary>
         /// <param name="aggregate"> The Aggregate. </param>
         void Remove(TAggregate aggregate);
-        
-        /// <summary>
-        /// delete entity permanently
-        /// </summary>
-        /// <param name="aggregate"></param>
-        void Delete(TAggregate aggregate);
     }
 }

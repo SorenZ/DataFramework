@@ -75,10 +75,5 @@ namespace DF.EntityFramework
 
             this.DbSet.Remove(aggregate);
         }
-
-        public void Delete(TAggregate aggregate)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
