@@ -16,7 +16,7 @@ namespace DF.Contracts
         /// <typeparam name="TAggregate"></typeparam>
         /// <typeparam name="TKey"></typeparam>
         /// <returns></returns>
-        IRepository<TAggregate, TKey> Repository<TAggregate, TKey>()
+        IRepository<TAggregate, TKey> CreateRepository<TAggregate, TKey>()
             where TAggregate : class, IAggregate<TKey>, new();
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace DF.Contracts
         /// </summary>
         /// <typeparam name="TAggregate"></typeparam>
         /// <returns></returns>
-        IRepository<TAggregate> Repository<TAggregate>()
+        IRepository<TAggregate> CreateRepository<TAggregate>()
             where TAggregate : class, IAggregate, new();
 
         /// <summary>

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using DF.Contracts;
 using DF.EntityFramework;
 using DF.Test.SqlCe.DataModels;
+
 using Xunit;
 
 namespace DF.Test.SqlCe
@@ -20,7 +19,7 @@ namespace DF.Test.SqlCe
             var context = InitDb.Init();
 
             this._unitOfWork = new UnitOfWork(context);
-            this._repository = _unitOfWork.Repository<Post, Guid>();
+            this._repository = _unitOfWork.CreateRepository<Post, Guid>();
 
         }
 

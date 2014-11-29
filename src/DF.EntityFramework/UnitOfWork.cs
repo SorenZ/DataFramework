@@ -16,13 +16,13 @@ namespace DF.EntityFramework
 
         private readonly DbContext _context;
 
-        public IRepository<TAggregate, TKey> Repository<TAggregate, TKey>() 
+        public IRepository<TAggregate, TKey> CreateRepository<TAggregate, TKey>() 
             where TAggregate : class, IAggregate<TKey>, new()
         {
             return new Repository<TAggregate, TKey>(this._context);
         }
 
-        public IRepository<TAggregate> Repository<TAggregate>() where TAggregate : class, IAggregate, new()
+        public IRepository<TAggregate> CreateRepository<TAggregate>() where TAggregate : class, IAggregate, new()
         {
             return new Repository<TAggregate>(this._context);
         }
