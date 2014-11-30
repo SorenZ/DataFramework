@@ -24,7 +24,7 @@ namespace DF.Test.SqlCe
         }
 
         [Fact]
-        public void QueryTest()
+        public void Query_Test()
         {
             var items = this._repository.Query
                 .Where(q => q.Title.Contains(".NET"))
@@ -34,7 +34,7 @@ namespace DF.Test.SqlCe
         }
 
         [Fact]
-        public void GetAllItems()
+        public void GetAllItems_Test()
         {
             var items = this._repository.GetAllItems();
 
@@ -42,11 +42,11 @@ namespace DF.Test.SqlCe
         }
 
         [Fact]
-        public void GetItemByKey()
+        public void GetItemByKey_Test()
         {
             var key = this._repository.Query
                 .First()
-                .BlogId;
+                .Id;
 
             var item = this._repository.GetItemByKey(key);
 
@@ -54,7 +54,7 @@ namespace DF.Test.SqlCe
         }
 
         [Fact]
-        public void GetItemCountTest()
+        public void GetItemCount_Test()
         {
             Assert.Equal(3, this._repository.GetItemCount());
         }

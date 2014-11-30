@@ -18,10 +18,20 @@ namespace DF.EntityFramework
 
         public void DeleteItemByKey(TKey id)
         {
-            var entry = new TAggregate { Id = id };
+            var aggregate = new TAggregate { Id = id };
+            var entry = this.Context.Entry(aggregate);
 
-            this.DbSet.Attach(entry);
-            this.DbSet.Remove(entry);
+            if (entry.State == EntityState.Added)
+            {
+                entry.State = EntityState.Detached;
+                return;
+            }
+
+            if (entry.State == EntityState.Detached)
+                this.DbSet.Attach(aggregate);
+
+            this.DbSet.Remove(aggregate);
+
         }
     }
 }

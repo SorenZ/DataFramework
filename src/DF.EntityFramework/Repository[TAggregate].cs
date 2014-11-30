@@ -13,16 +13,16 @@ namespace DF.EntityFramework
     public class Repository<TAggregate> : IRepository<TAggregate>
         where TAggregate : class, IAggregate, new()
     {
-        private readonly DbContext _context;
+        protected readonly DbContext Context;
 
         public Repository(DbContext context)
         {
-            this._context = context;
+            this.Context = context;
         }
 
-        public virtual DbSet<TAggregate> DbSet
+        protected virtual DbSet<TAggregate> DbSet
         {
-            get { return this._context.Set<TAggregate>(); }
+            get { return this.Context.Set<TAggregate>(); }
         }
 
         public IQueryable<TAggregate> Query
@@ -52,7 +52,7 @@ namespace DF.EntityFramework
 
         public void Update(TAggregate aggregate)
         {
-            var entry = this._context.Entry(aggregate);
+            var entry = this.Context.Entry(aggregate);
 
             if (entry.State == EntityState.Detached)
                 this.DbSet.Attach(aggregate);
@@ -62,7 +62,7 @@ namespace DF.EntityFramework
 
         public void Remove(TAggregate aggregate)
         {
-            var entry = this._context.Entry(aggregate);
+            var entry = this.Context.Entry(aggregate);
 
             if (entry.State == EntityState.Added)
             {

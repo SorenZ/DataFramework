@@ -59,9 +59,9 @@
     <Compile Include="DataModels\Blog.cs" />
     <Compile Include="DataModels\BloggingContext.cs" />
     <Compile Include="DataModels\Post.cs" />
-    <Compile Include="FirstTest.cs" />
     <Compile Include="InitDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryCommandTests.cs" />
     <Compile Include="RepositoryQueryTests.cs" />
   </ItemGroup>
   <ItemGroup>
