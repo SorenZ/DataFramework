@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 
 using DF.Contracts;
 using DF.Core.Models;
@@ -19,6 +20,15 @@ namespace DF.EntityFramework
         public void DeleteItemByKey(TKey id)
         {
             var aggregate = new TAggregate { Id = id };
+
+            // if item already was in DbSet local collection.
+            var item = this.DbSet.Local.FirstOrDefault(e => Equals(e.Id, id));
+            if (item != null)
+            {
+                this.DbSet.Remove(item);
+                return;
+            }
+
             var entry = this.Context.Entry(aggregate);
 
             if (entry.State == EntityState.Added)

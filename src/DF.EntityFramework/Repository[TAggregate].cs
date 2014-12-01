@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -20,7 +19,7 @@ namespace DF.EntityFramework
             this.Context = context;
         }
 
-        protected virtual DbSet<TAggregate> DbSet
+        protected DbSet<TAggregate> DbSet
         {
             get { return this.Context.Set<TAggregate>(); }
         }
