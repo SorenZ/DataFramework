@@ -20,7 +20,6 @@ namespace DF.Test.SqlCe
 
             this._unitOfWork = new UnitOfWork(context);
             this._repository = _unitOfWork.CreateRepository<Post, Guid>();
-
         }
 
         [Fact]
