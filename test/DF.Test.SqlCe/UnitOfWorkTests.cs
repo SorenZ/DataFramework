@@ -55,9 +55,6 @@ namespace DF.Test.SqlCe
 
             this._unitOfWork.RollBack();
 
-            // even after commit...
-            this._unitOfWork.Commit();
-
             var secondShotItemCount = this._blogRepository.GetItemCount();
 
             Assert.True(secondShotItemCount == firstShotItemCount);

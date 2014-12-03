@@ -37,6 +37,6 @@ namespace DF.Contracts
         /// </summary>
         void RollBack();
 
-        void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
+        //void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
     }
 }

@@ -56,6 +56,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomiedRepositoryTests.cs" />
+    <Compile Include="CustomiedRepository\IPostRepository.cs" />
+    <Compile Include="CustomiedRepository\PostRepository.cs" />
     <Compile Include="DataModels\Blog.cs" />
     <Compile Include="DataModels\BloggingContext.cs" />
     <Compile Include="DataModels\Post.cs" />

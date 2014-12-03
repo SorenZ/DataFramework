@@ -48,10 +48,10 @@ namespace DF.EntityFramework
             }
         }
 
-        public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
-        {
-            throw new NotImplementedException();
-        }
+        //public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void Dispose()
         {
