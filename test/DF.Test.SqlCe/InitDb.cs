@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+
 using DF.Test.SqlCe.DataModels;
 
 namespace DF.Test.SqlCe
