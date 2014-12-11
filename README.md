@@ -87,8 +87,8 @@ Samples
 ------------------
 * Make generic Repository from UnitOfWork
 ```csharp
-unitOfWork = new UnitOfWork(context);
-blogRepository = _unitOfWork.CreateRepository<Blog, Guid>();
+var unitOfWork = new UnitOfWork(context);
+var blogRepository = _unitOfWork.CreateRepository<Blog, Guid>();
 
 blogRepository.Add(new Blog
   { 
