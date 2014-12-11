@@ -4,8 +4,6 @@ using System.Linq;
 
 using DF.Contracts;
 using DF.Core.Models;
-using DF.Core.Query;
-using DF.EntityFramework.Extensions;
 
 namespace DF.EntityFramework
 {
@@ -34,10 +32,6 @@ namespace DF.EntityFramework
             return this.Query;
         }
 
-        public IEnumerable<TAggregate> GetItems(int startIndex, int itemCount, SortDescription[] sortDescriptions = null)
-        {
-            return this.Query.ToPage(startIndex, itemCount, sortDescriptions);
-        }
 
         public int GetItemCount()
         {

@@ -47,11 +47,6 @@
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\ICriteria.cs" />
-    <Compile Include="Query\IPaginatedCriteria.cs" />
-    <Compile Include="Query\IPaginated[T].cs" />
-    <Compile Include="Query\Paginated.cs" />
-    <Compile Include="Query\PaginatedCriteria.cs" />
-    <Compile Include="Query\SortDescription.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />

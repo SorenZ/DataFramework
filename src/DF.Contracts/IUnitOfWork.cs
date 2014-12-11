@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 
 using DF.Core.Models;
 
@@ -36,7 +35,5 @@ namespace DF.Contracts
         /// rolebacks the works.
         /// </summary>
         void RollBack();
-
-        //void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
     }
 }
