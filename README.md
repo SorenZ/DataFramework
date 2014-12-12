@@ -2,6 +2,12 @@ DataFramework
 =============
 Sets of Models, Contracts, Patterns and Practices related to Data Driven Application.
 
+How to Install 
+---------------------------
+Install [DF.EnittyFramework](https://www.nuget.org/packages/DF.EntityFramework/) from the package manager console:
+
+    PM> Install-Package DF.EntityFrameworkr
+
 Repository and Unit of Work
 ---------------------------
 
