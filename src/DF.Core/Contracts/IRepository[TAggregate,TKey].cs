@@ -1,6 +1,6 @@
 ﻿using DF.Core.Models;
 
-namespace DF.Contracts
+namespace DF.Core.Contracts
 {
     /// <summary>
     /// Represents a generic repository.

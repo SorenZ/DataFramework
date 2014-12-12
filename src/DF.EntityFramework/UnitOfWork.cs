@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Data;
 using System.Data.Entity;
 
-using DF.Contracts;
+using DF.Core.Contracts;
 using DF.Core.Models;
 
 namespace DF.EntityFramework

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DF.Contracts
+namespace DF.Core.Contracts
 {
     /// <summary>
     /// Represents a generic repository.

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-using DF.Contracts;
+using DF.Core.Contracts;
 using DF.Core.Models;
 
 namespace DF.EntityFramework

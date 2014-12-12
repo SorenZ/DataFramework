@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IRepository[TAggregate,TKey].cs" />
+    <Compile Include="Contracts\IRepository[TAggregate].cs" />
+    <Compile Include="Contracts\IUnitOfWork.cs" />
     <Compile Include="Models\GuidAggregate.cs" />
     <Compile Include="Models\GuidEntity.cs" />
     <Compile Include="Models\IAggregate.cs" />
@@ -47,9 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\ICriteria.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

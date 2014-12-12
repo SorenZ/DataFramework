@@ -73,10 +73,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DF.Contracts\DF.Contracts.csproj">
-      <Project>{5AB7238A-7AA6-47C4-B378-AFFD616295C1}</Project>
-      <Name>DF.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\DF.Core\DF.Core.csproj">
       <Project>{52030E4F-C189-40AF-9C94-7E00A5D46032}</Project>
       <Name>DF.Core</Name>
