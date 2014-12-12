@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\CommandResult.cs" />
     <Compile Include="Models\GuidAggregate.cs" />
     <Compile Include="Models\GuidEntity.cs" />
     <Compile Include="Models\IAggregate.cs" />
