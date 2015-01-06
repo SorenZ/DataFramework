@@ -10,7 +10,7 @@ namespace DF.EntityFramework
     {
         public UnitOfWork(DbContext context)
         {
-            this._context = context;
+            this._context = context; 
         }
 
         private readonly DbContext _context;
@@ -47,11 +47,6 @@ namespace DF.EntityFramework
                 }
             }
         }
-
-        //public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public void Dispose()
         {
