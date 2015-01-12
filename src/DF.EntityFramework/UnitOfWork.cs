@@ -11,7 +11,7 @@ namespace DF.EntityFramework
     {
         public UnitOfWork(DbContext context)
         {
-            this._context = context;
+            this._context = context; 
         }
 
         private readonly DbContext _context;
@@ -21,6 +21,7 @@ namespace DF.EntityFramework
         {
             return new Repository<TAggregate, TKey>(this._context);
         }
+
 
         public IRepository<TAggregate> CreateRepository<TAggregate>() where TAggregate : class, IAggregate, new()
         {
@@ -67,11 +68,6 @@ namespace DF.EntityFramework
                 }
             }
         }
-
-        //public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public void Dispose()
         {

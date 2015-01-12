@@ -6,7 +6,7 @@ How to Install
 ---------------------------
 Install [DF.EnittyFramework](https://www.nuget.org/packages/DF.EntityFramework/) from the package manager console:
 
-    PM> Install-Package DF.EntityFrameworkr
+    PM> Install-Package DF.EntityFramework
 
 Repository and Unit of Work
 ---------------------------

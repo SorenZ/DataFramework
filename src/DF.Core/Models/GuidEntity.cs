@@ -15,6 +15,6 @@ namespace DF.Core.Models
             this.Id = Guid.NewGuid();
         }
 
-        public virtual Guid Id { get; set; }
+        public Guid Id { get; set; }
     }
 }
