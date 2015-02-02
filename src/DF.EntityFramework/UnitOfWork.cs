@@ -16,16 +16,16 @@ namespace DF.EntityFramework
 
         private readonly DbContext _context;
 
-        public IRepository<TAggregate, TKey> CreateRepository<TAggregate, TKey>() 
-            where TAggregate : class, IAggregate<TKey>, new()
+        public IRepository<TEntity, TKey> CreateRepository<TEntity, TKey>() 
+            where TEntity : class, IEntity<TKey>, new()
         {
-            return new Repository<TAggregate, TKey>(this._context);
+            return new Repository<TEntity, TKey>(this._context);
         }
 
 
-        public IRepository<TAggregate> CreateRepository<TAggregate>() where TAggregate : class, IAggregate, new()
+        public IRepository<TEntity> CreateRepository<TEntity>() where TEntity : class, IEntity, new()
         {
-            return new Repository<TAggregate>(this._context);
+            return new Repository<TEntity>(this._context);
         }
 
         public void Commit()

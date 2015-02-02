@@ -7,8 +7,8 @@ using DF.Core.Models;
 
 namespace DF.EntityFramework
 {
-    public class Repository<TAggregate> : IRepository<TAggregate>
-        where TAggregate : class, IAggregate, new()
+    public class Repository<TEntity> : IRepository<TEntity>
+        where TEntity : class, IEntity, new()
     {
         protected readonly DbContext Context;
 
@@ -17,17 +17,17 @@ namespace DF.EntityFramework
             this.Context = context;
         }
 
-        protected DbSet<TAggregate> DbSet
+        protected DbSet<TEntity> DbSet
         {
-            get { return this.Context.Set<TAggregate>(); }
+            get { return this.Context.Set<TEntity>(); }
         }
 
-        public IQueryable<TAggregate> Query
+        public IQueryable<TEntity> Query
         {
             get { return this.DbSet.AsQueryable(); }
         }
 
-        public IEnumerable<TAggregate> GetAllItems()
+        public IEnumerable<TEntity> GetAllItems()
         {
             return this.Query;
         }
@@ -38,24 +38,24 @@ namespace DF.EntityFramework
             return this.Query.Count();
         }
 
-        public void Add(TAggregate aggregate)
+        public void Add(TEntity entity)
         {
-            this.DbSet.Add(aggregate);
+            this.DbSet.Add(entity);
         }
 
-        public void Update(TAggregate aggregate)
+        public void Update(TEntity entity)
         {
-            var entry = this.Context.Entry(aggregate);
+            var entry = this.Context.Entry(entity);
 
             if (entry.State == EntityState.Detached)
-                this.DbSet.Attach(aggregate);
+                this.DbSet.Attach(entity);
 
             entry.State = EntityState.Modified;
         }
 
-        public void Remove(TAggregate aggregate)
+        public void Remove(TEntity entity)
         {
-            var entry = this.Context.Entry(aggregate);
+            var entry = this.Context.Entry(entity);
 
             if (entry.State == EntityState.Added)
             {
@@ -64,9 +64,9 @@ namespace DF.EntityFramework
             }
 
             if (entry.State == EntityState.Detached)
-                this.DbSet.Attach(aggregate);
+                this.DbSet.Attach(entity);
 
-            this.DbSet.Remove(aggregate);
+            this.DbSet.Remove(entity);
         }
     }
 }

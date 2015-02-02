@@ -6,19 +6,19 @@ namespace DF.Core.Contracts
     /// <summary>
     /// Represents a generic repository.
     /// </summary>
-    /// <typeparam name="TAggregate"></typeparam>
-    public interface IRepository<TAggregate>
+    /// <typeparam name="TEntity"></typeparam>
+    public interface IRepository<TEntity>
     {
         /// <summary>
         /// Gets the query.
         /// </summary>
-        IQueryable<TAggregate> Query { get; }
+        IQueryable<TEntity> Query { get; }
 
         /// <summary>
         /// Gets all items.
         /// </summary>
         /// <returns> </returns>
-        IEnumerable<TAggregate> GetAllItems();
+        IEnumerable<TEntity> GetAllItems();
 
         /// <summary>
         /// Gets the item count.
@@ -29,19 +29,19 @@ namespace DF.Core.Contracts
         /// <summary>
         /// Adds the specified aggregate.
         /// </summary>
-        /// <param name="aggregate"> The aggregate. </param>
-        void Add(TAggregate aggregate);
+        /// <param name="entity"> The aggregate. </param>
+        void Add(TEntity entity);
 
         /// <summary>
-        /// Updates the specified Aggregate.
+        /// Updates the specified Entity.
         /// </summary>
         /// <param name="aggregate"> The aggregate. </param>
-        void Update(TAggregate aggregate);
+        void Update(TEntity aggregate);
 
         /// <summary>
         /// Removes the specified aggregate.
         /// </summary>
-        /// <param name="aggregate"> The Aggregate. </param>
-        void Remove(TAggregate aggregate);
+        /// <param name="aggregate"> The Entity. </param>
+        void Remove(TEntity aggregate);
     }
 }

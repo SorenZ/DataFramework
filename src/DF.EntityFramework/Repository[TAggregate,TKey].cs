@@ -6,20 +6,20 @@ using DF.Core.Models;
 
 namespace DF.EntityFramework
 {
-    public class Repository<TAggregate,TKey> : Repository<TAggregate>,
-        IRepository<TAggregate,TKey> where TAggregate : class, IAggregate<TKey>, new()
+    public class Repository<TEntity, TKey> : Repository<TEntity>,
+        IRepository<TEntity, TKey> where TEntity : class, IEntity<TKey>, new()
     {
         public Repository(DbContext context) : 
             base(context) { }
 
-        public TAggregate GetItemByKey(TKey id)
+        public TEntity GetItemByKey(TKey id)
         {
             return this.DbSet.Find(id);
         }
 
         public void DeleteItemByKey(TKey id)
         {
-            var aggregate = new TAggregate { Id = id };
+            var entity = new TEntity { Id = id };
 
             // if item already was in DbSet local collection.
             var item = this.DbSet.Local.FirstOrDefault(e => Equals(e.Id, id));
@@ -29,7 +29,7 @@ namespace DF.EntityFramework
                 return;
             }
 
-            var entry = this.Context.Entry(aggregate);
+            var entry = this.Context.Entry(entity);
 
             if (entry.State == EntityState.Added)
             {
@@ -38,9 +38,9 @@ namespace DF.EntityFramework
             }
 
             if (entry.State == EntityState.Detached)
-                this.DbSet.Attach(aggregate);
+                this.DbSet.Attach(entity);
 
-            this.DbSet.Remove(aggregate);
+            this.DbSet.Remove(entity);
 
         }
     }

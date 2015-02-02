@@ -3,7 +3,7 @@ using DF.Core.Models;
 
 namespace DF.Test.SqlCe.DataModels
 {
-    public class Post : GuidAggregate
+    public class Post : GuidEntity
     {
         public string Title { get; set; }
         public string Content { get; set; }
