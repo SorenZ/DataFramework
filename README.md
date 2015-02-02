@@ -20,19 +20,19 @@ Repository and Unit of Work
         /// <summary>
         /// provide basic repository for specific Aggregate and Key
         /// </summary>
-        /// <typeparam name="TAggregate"></typeparam>
+        /// <typeparam name="TEntity"></typeparam>
         /// <typeparam name="TKey"></typeparam>
         /// <returns></returns>
-        IRepository<TAggregate, TKey> CreateRepository<TAggregate, TKey>()
-            where TAggregate : class, IAggregate<TKey>, new();
+        IRepository<TEntity, TKey> CreateRepository<TEntity, TKey>()
+            where TEntity : class, IEntity<TKey>, new();
 
         /// <summary>
-        /// provide basic repository for specific Aggregate
+        /// provide basic repository for specific Entity
         /// </summary>
-        /// <typeparam name="TAggregate"></typeparam>
+        /// <typeparam name="TEntity"></typeparam>
         /// <returns></returns>
-        IRepository<TAggregate> CreateRepository<TAggregate>()
-            where TAggregate : class, IAggregate, new();
+        IRepository<TEntity> CreateRepository<TEntity>()
+            where TEntity : class, IEntity, new();
 
         /// <summary>
         /// Commits the works.
@@ -49,19 +49,19 @@ Repository and Unit of Work
     /// <summary>
     /// Represents a generic repository.
     /// </summary>
-    /// <typeparam name="TAggregate"></typeparam>
-    public interface IRepository<TAggregate>
+    /// <typeparam name="TEntity"></typeparam>
+    public interface IRepository<TEntity>
     {
         /// <summary>
         /// Gets the query.
         /// </summary>
-        IQueryable<TAggregate> Query { get; }
+        IQueryable<TEntity> Query { get; }
 
         /// <summary>
         /// Gets all items.
         /// </summary>
         /// <returns> </returns>
-        IEnumerable<TAggregate> GetAllItems();
+        IEnumerable<TEntity> GetAllItems();
 
         /// <summary>
         /// Gets the item count.
@@ -70,22 +70,22 @@ Repository and Unit of Work
         int GetItemCount();
 
         /// <summary>
-        /// Adds the specified aggregate.
+        /// Adds the specified entity.
         /// </summary>
-        /// <param name="aggregate"> The aggregate. </param>
-        void Add(TAggregate aggregate);
+        /// <param name="entity"> The entity. </param>
+        void Add(TAggregate entity);
 
         /// <summary>
         /// Updates the specified Aggregate.
         /// </summary>
-        /// <param name="aggregate"> The aggregate. </param>
-        void Update(TAggregate aggregate);
+        /// <param name="entity"> The entity. </param>
+        void Update(TAggregate entity);
 
         /// <summary>
-        /// Removes the specified aggregate.
+        /// Removes the specified entity.
         /// </summary>
-        /// <param name="aggregate"> The Aggregate. </param>
-        void Remove(TAggregate aggregate);
+        /// <param name="entity"> The Aggregate. </param>
+        void Remove(TAggregate entity);
     }
 ```
 
